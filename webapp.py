@@ -21,8 +21,7 @@ if response.status_code==200:
 else:
     print("Failed to download the model file")
 
-model=pickle.load(open('https://github.com/ManasiBhavsar/House-Price-Prediction/blob/main/trained_model.sav','rb'))
-
+loaded_model=response
 #load model
 #def load_model():
     #try :
@@ -44,7 +43,7 @@ def predict_price(input_data,model):
     Function to predict house price based on the input features.
     """
     features = np.array([input_data]).reshape(1, -1)
-    prediction = model.predict(features)
+    prediction = loaded_model.predict(features)
     return prediction[0]
 
 # Streamlit app
@@ -78,7 +77,7 @@ def main():
     # Predict button
     if st.button("Predict"):
         # Make prediction
-        prediction = model.predict(input_data)
+        prediction = loaded_model.predict(input_data)
         st.success(f"The estimated price of the house is ${prediction[0]:,.2f}")
         
 if __name__ == "__main__":
