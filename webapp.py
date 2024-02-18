@@ -41,7 +41,7 @@ loaded_model = response
 
 
 
-def predict_price(input_data,model):
+def predict_price(input_data):
     """
     Function to predict house price based on the input features.
     """
@@ -75,12 +75,12 @@ def main():
     input_data =(area, bedrooms, bathrooms, stories, mainroad, guestroom, basement, hotwaterheating,
                                 airconditioning, parking, prefarea, furnishingstatus)
     
-    input_data = (np.array(input_data)).reshape(1,-1)
+    #input_data = (np.array(input_data)).reshape(1,-1)
     
     # Predict button
     if st.button("Predict"):
         # Make prediction
-        prediction = loaded_model.predict(input_data)
+        prediction = predict_price(input_data)
         st.success(f"The estimated price of the house is ${prediction[0]:,.2f}")
         
 if __name__ == "__main__":
