@@ -11,6 +11,7 @@ import pickle
 import numpy as np
 import os
 import requests
+import sklearn
 
 model_url='https://raw.githubusercontent.com/ManasiBhavsar/House-Price-Prediction/blob/main/finalized_model.sav'
 responsee=requests.get(model_url)
