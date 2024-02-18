@@ -20,11 +20,16 @@ if responsee.status_code==200:
         f.write(responsee.content)
 else:
     print("Failed to download the model file")
+if os.path.exists('finalized_model.sav'):
+    with open('finalized_model.sav', 'rb') as f:
+        loaded_model = pickle.load(f)
+else:
+    st.error("Model file not found")
 
 # Load the model
 #with open('finalized_model.sav', 'rb') as f:
     #loaded_model = pickle.load(f)
-loaded_model = responsee
+#loaded_model = responsee
 #load model
 #def load_model():
     #try :
