@@ -22,9 +22,9 @@ else:
     print("Failed to download the model file")
 
 # Load the model
-with open('finalized_model.sav', 'rb') as f:
-    loaded_model = pickle.load(f)
-#loaded_model = response
+#with open('finalized_model.sav', 'rb') as f:
+    #loaded_model = pickle.load(f)
+loaded_model = response
 #load model
 #def load_model():
     #try :
