@@ -10,21 +10,23 @@ import pandas as pd
 import pickle
 import numpy as np
 import os
+import requests
 
-# Load the dataset
-def load_data():
-    file_path = r'D:/House Price Prediction/Housing.csv'
-    if os.path.exists(file_path):
-        return pd.read_csv(file_path)
-    else:
-        print("Error: CSV file not found")
-        return None
+model_url=https://github.com/ManasiBhavsar/House-Price-Prediction/blob/main/trained_model.sav
+        response=requests.get(model_url)
+
+if response.status_code==200:
+    with open('trained_model.sav','wb') as f:
+        f.write(response.content)
+else:
+    print("Failed to download the model file")
+
+model=response
 
 #load model
 def load_model():
     try :
-        model=pickle.load(open('rf_model.pkl','rb'))
-        
+        model=response
         print("Model loaded successfully")
         print("Model type:", type(model))
         return model
