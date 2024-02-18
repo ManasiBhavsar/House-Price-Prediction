@@ -20,9 +20,11 @@ if response.status_code==200:
         f.write(response.content)
 else:
     print("Failed to download the model file")
-
-#with open('rf_model.pkl', 'rb') as f:
-loaded_model = response
+model_url = 'https://github.com/ManasiBhavsar/House-Price-Prediction/raw/main/rf_model.pkl'
+# Load the model
+with open('trained_model.pkl', 'rb') as f:
+    loaded_model = pickle.load(f)
+#loaded_model = response
 #load model
 #def load_model():
     #try :
