@@ -21,7 +21,8 @@ if response.status_code==200:
 else:
     print("Failed to download the model file")
 
-loaded_model=response
+with open('trained_model.pkl', 'rb') as f:
+    loaded_model = pickle.load(f)
 #load model
 #def load_model():
     #try :
