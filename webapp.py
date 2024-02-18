@@ -51,7 +51,7 @@ def main():
     st.title("House Price Prediction App")
     st.write("Select values for each feature to predict the house price.")
 
-    model=pickle.load(open('https://github.com/ManasiBhavsar/House-Price-Prediction/blob/main/trained_model.sav','rb'))
+    #model=pickle.load(open('https://github.com/ManasiBhavsar/House-Price-Prediction/blob/main/trained_model.sav','rb'))
 
 
     # Dropdown menus for each column in the dataset
