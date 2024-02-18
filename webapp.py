@@ -22,7 +22,7 @@ else:
     print("Failed to download the model file")
 if os.path.exists('finalized_model.sav'):
     with open('finalized_model.sav', 'rb') as f:
-        loaded_model = pickle.load(f)
+        loaded_model = pickle.load(open("finalized_model.sav",'rb'))
 else:
     st.error("Model file not found")
 
