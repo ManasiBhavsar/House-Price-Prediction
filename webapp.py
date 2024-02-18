@@ -13,18 +13,18 @@ import os
 import requests
 
 model_url='https://raw.githubusercontent.com/ManasiBhavsar/House-Price-Prediction/blob/main/finalized_model.sav'
-response=requests.get(model_url)
+responsee=requests.get(model_url)
 
 if response.status_code==200:
     with open('finalized_model.sav','wb') as f:
-        f.write(response.content)
+        f.write(responsee.content)
 else:
     print("Failed to download the model file")
 
 # Load the model
 #with open('finalized_model.sav', 'rb') as f:
     #loaded_model = pickle.load(f)
-loaded_model = response
+loaded_model = responsee
 #load model
 #def load_model():
     #try :
