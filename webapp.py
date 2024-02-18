@@ -15,7 +15,7 @@ import requests
 model_url='https://raw.githubusercontent.com/ManasiBhavsar/House-Price-Prediction/blob/main/finalized_model.sav'
 responsee=requests.get(model_url)
 
-if response.status_code==200:
+if responsee.status_code==200:
     with open('finalized_model.sav','wb') as f:
         f.write(responsee.content)
 else:
