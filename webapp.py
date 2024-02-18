@@ -16,13 +16,13 @@ model_url='https://raw.githubusercontent.com/ManasiBhavsar/House-Price-Predictio
 response=requests.get(model_url)
 
 if response.status_code==200:
-    with open('https://github.com/ManasiBhavsar/House-Price-Prediction/blob/main/rf_model.pkl','wb') as f:
+    with open('rf_model.pkl','wb') as f:
         f.write(response.content)
 else:
     print("Failed to download the model file")
 
 # Load the model
-with open('https://github.com/ManasiBhavsar/House-Price-Prediction/blob/main/rf_model.pkl', 'rb') as f:
+with open('rf_model.pkl', 'rb') as f:
     loaded_model = pickle.load(f)
 #loaded_model = response
 #load model
