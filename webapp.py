@@ -12,7 +12,7 @@ import numpy as np
 import os
 import requests
 
-model_url='https://github.com/ManasiBhavsar/House-Price-Prediction/blob/main/rf_model.pkl'
+model_url='https://raw.githubusercontent.com/ManasiBhavsar/House-Price-Prediction/blob/main/rf_model.pkl'
 response=requests.get(model_url)
 
 if response.status_code==200:
