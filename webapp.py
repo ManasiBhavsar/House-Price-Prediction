@@ -13,7 +13,7 @@ import os
 import requests
 
 model_url='https://github.com/ManasiBhavsar/House-Price-Prediction/blob/main/trained_model.sav'
-        response=requests.get(model_url)
+response=requests.get(model_url)
 
 if response.status_code==200:
     with open('trained_model.sav','wb') as f:
