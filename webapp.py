@@ -21,20 +21,20 @@ if response.status_code==200:
 else:
     print("Failed to download the model file")
 
-model=response
+model=pickle.load(open('https://github.com/ManasiBhavsar/House-Price-Prediction/blob/main/trained_model.sav','rb'))
 
 #load model
-def load_model():
-    try :
-        model=response
-        print("Model loaded successfully")
-        print("Model type:", type(model))
-        return model
-    except FileNotFoundError:
-        print("Error: Model file not found")
-    except Exception as e:
-        print("Error loading model:", e)
-    return None
+#def load_model():
+    #try :
+        
+        #print("Model loaded successfully")
+        #print("Model type:", type(model))
+        #return model
+    #except FileNotFoundError:
+     #   print("Error: Model file not found")
+    #except Exception as e:
+     #   print("Error loading model:", e)
+    #return None
 
 
 
