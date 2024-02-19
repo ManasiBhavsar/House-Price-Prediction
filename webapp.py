@@ -12,40 +12,21 @@ import numpy as np
 import os
 import requests
 import sklearn
+import joblid
+
 
 model_url='https://raw.githubusercontent.com/ManasiBhavsar/House-Price-Prediction/blob/main/finalized_model.sav'
-responsee=requests.get(model_url)
+r=requests.get(model_url)
 
 if responsee.status_code==200:
     with open('finalized_model.sav','wb') as f:
-        f.write(responsee.content)
+        f.write(r.content)
 else:
     print("Failed to download the model file")
 if os.path.exists('finalized_model.sav'):
-    with open('finalized_model.sav', 'rb') as f:
-        loaded_model = pickle.load(open("finalized_model.sav",'rb'))
-else:
-    st.error("Model file not found")
-
+    
+model = joblid.load('finalized_model.sav')
 # Load the model
-#with open('finalized_model.sav', 'rb') as f:
-    #loaded_model = pickle.load(f)
-#loaded_model = responsee
-#load model
-#def load_model():
-    #try :
-        
-        #print("Model loaded successfully")
-        #print("Model type:", type(model))
-        #return model
-    #except FileNotFoundError:
-     #   print("Error: Model file not found")
-    #except Exception as e:
-     #   print("Error loading model:", e)
-    #return None
-
-
-
 
 def predict_price(input_data):
     """
