@@ -22,7 +22,6 @@ if responsee.status_code==200:
         f.write(r.content)
 else:
     print("Failed to download the model file")
-if os.path.exists('finalized_model.sav'):
     
 model = joblid.load('finalized_model.sav')
 # Load the model
