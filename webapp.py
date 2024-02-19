@@ -4,7 +4,6 @@ Created on Fri Feb 16 23:27:32 2024
 
 @author: manas
 """
-
 import streamlit as st
 import pandas as pd
 import pickle
