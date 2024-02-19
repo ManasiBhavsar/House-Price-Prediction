@@ -10,7 +10,6 @@ import pickle
 import numpy as np
 import os
 import requests
-import sklearn
 import joblid
 
 
